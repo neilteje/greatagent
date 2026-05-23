@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: 222 28% 5%;
+  --foreground: 210 30% 94%;
+  --card: 222 28% 8%;
+  --card-foreground: 210 30% 94%;
+  --muted: 220 18% 13%;
+  --muted-foreground: 218 12% 66%;
+  --accent: 175 34% 18%;
+  --accent-foreground: 176 48% 88%;
+  --primary: 173 72% 46%;
+  --primary-foreground: 190 70% 7%;
+  --destructive: 0 76% 56%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 17% 18%;
+  --input: 220 17% 18%;
+  --ring: 173 72% 46%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html,
+body {
+  min-height: 100%;
+  background: hsl(var(--background));
+}
+
+body {
+  color: hsl(var(--foreground));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background:
+    radial-gradient(circle at 22% 8%, rgba(20, 184, 166, 0.16), transparent 30%),
+    radial-gradient(circle at 82% 0%, rgba(99, 102, 241, 0.14), transparent 32%),
+    linear-gradient(180deg, #061013 0%, #080b11 48%, #05070b 100%);
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(255,255,255,0.027) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.027) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.glass {
+  background: rgba(12, 18, 25, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.soft-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
+  border: 1px solid rgba(255,255,255,0.09);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: hsl(var(--primary));
+  box-shadow: 0 0 0 5px rgba(45, 212, 191, 0.1), 0 0 18px rgba(45, 212, 191, 0.9);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}

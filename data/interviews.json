@@ -1,0 +1,683 @@
+{
+  "interviews": [
+    {
+      "id": "live-airbnb-demo-1779543129356",
+      "title": "Airbnb host live demo",
+      "customer": "Maya, first-time host",
+      "segment": "Marketplace supply",
+      "goal": "Understand onboarding friction, pricing confidence, support dependency, and willingness to pay for first-time Airbnb hosts.",
+      "status": "complete",
+      "createdAt": "2026-05-23T13:32:24.980Z",
+      "durationSeconds": 8,
+      "sentimentScore": -0.18,
+      "urgencyScore": 42,
+      "confidenceScore": 72,
+      "tags": [],
+      "transcript": [
+        {
+          "id": "live-airbnb-demo-1779543129356-recording-1779543142014",
+          "interviewId": "live-airbnb-demo-1779543129356",
+          "speaker": "Interviewer",
+          "text": "Hey, what's up? I think the, uh, I was wondering what your thoughts on Airbnb are.",
+          "timestamp": "2026-05-23T13:32:22.014Z",
+          "offsetSeconds": 0
+        }
+      ],
+      "insights": [],
+      "qualityScore": 86,
+      "report": {
+        "interviewId": "live-airbnb-demo-1779543129356",
+        "executiveSummary": "The interview with Maya, a first-time Airbnb host, aimed to uncover onboarding challenges, pricing confidence, support needs, and payment willingness. Overall, Maya expressed mixed feelings about the platform, highlighting areas for improvement.",
+        "topInsights": [
+          "Maya feels overwhelmed by the onboarding process.",
+          "She lacks confidence in setting competitive pricing.",
+          "There is a strong dependency on customer support for guidance."
+        ],
+        "painPoints": [
+          "Complex onboarding steps lead to confusion.",
+          "Difficulty in understanding pricing strategies.",
+          "Limited access to timely support."
+        ],
+        "featureRequests": [
+          "Simplified onboarding tutorials.",
+          "Dynamic pricing suggestions based on market trends.",
+          "24/7 chat support for immediate assistance."
+        ],
+        "userQuotes": [
+          "\"I just don’t know if I’m pricing my listing right.\"",
+          "\"The onboarding process is a bit too much for me.\""
+        ],
+        "buyingSignals": [
+          "Maya expressed willingness to pay for premium support features.",
+          "Interest in tools that simplify pricing decisions."
+        ],
+        "qualityScore": 86,
+        "qualityBreakdown": {
+          "clarity": 90,
+          "engagement": 85,
+          "relevance": 80
+        },
+        "didWell": [
+          "Engaged Maya effectively throughout the interview.",
+          "Asked open-ended questions that encouraged detailed responses."
+        ],
+        "missedFollowUps": [
+          "Did not explore Maya's specific expectations for support.",
+          "Failed to ask about her previous experiences with similar platforms."
+        ],
+        "leadingQuestions": [
+          "What do you think about the pricing options available?",
+          "How do you feel about the support you received during onboarding?"
+        ],
+        "bestNextQuestions": [
+          "Can you describe a specific moment when you felt lost during onboarding?",
+          "What features would make you feel more confident as a host?"
+        ],
+        "recommendedProductActions": [
+          "Enhance onboarding materials with step-by-step guides.",
+          "Develop a pricing tool that provides real-time market analysis.",
+          "Increase support availability to cater to first-time hosts."
+        ],
+        "generatedAt": "2026-05-23T13:32:37.065Z"
+      }
+    },
+    {
+      "id": "airbnb-host-onboarding",
+      "title": "Airbnb host onboarding",
+      "customer": "Maya, first-time host",
+      "segment": "Marketplace supply",
+      "goal": "Understand first-month setup friction and monetizable guidance opportunities.",
+      "status": "complete",
+      "createdAt": "2026-05-23T12:00:00.000Z",
+      "durationSeconds": 1320,
+      "qualityScore": 86,
+      "sentimentScore": -0.18,
+      "urgencyScore": 79,
+      "confidenceScore": 90,
+      "tags": [
+        "onboarding",
+        "pricing",
+        "support-dependency",
+        "willingness-to-pay"
+      ],
+      "transcript": [
+        {
+          "id": "airbnb-host-onboarding-chunk-1",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Interviewer",
+          "text": "Thanks for joining. I want to understand how your first month hosting went, especially onboarding and pricing.",
+          "offsetSeconds": 4,
+          "timestamp": "2026-05-23T12:00:04.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-2",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Customer",
+          "text": "Yeah onboarding was fine I guess.",
+          "offsetSeconds": 12,
+          "timestamp": "2026-05-23T12:00:12.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-3",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Interviewer",
+          "text": "Fine as in smooth, or fine as in you got through it?",
+          "offsetSeconds": 20,
+          "timestamp": "2026-05-23T12:00:20.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-4",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Customer",
+          "text": "I mean I figured it out eventually. There were a couple places where I wasn't totally sure what Airbnb wanted from me.",
+          "offsetSeconds": 31,
+          "timestamp": "2026-05-23T12:00:31.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-5",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Interviewer",
+          "text": "Where did that happen?",
+          "offsetSeconds": 43,
+          "timestamp": "2026-05-23T12:00:43.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-6",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Customer",
+          "text": "The pricing settings were kind of weird. I didn't know if smart pricing would make me too cheap on weekends.",
+          "offsetSeconds": 53,
+          "timestamp": "2026-05-23T12:00:53.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-7",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Customer",
+          "text": "I had to message support twice, once for ID verification and once because my calendar kept blocking dates I thought were open.",
+          "offsetSeconds": 68,
+          "timestamp": "2026-05-23T12:01:08.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-8",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Interviewer",
+          "text": "Did that change how confident you felt about launching?",
+          "offsetSeconds": 81,
+          "timestamp": "2026-05-23T12:01:21.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-9",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Customer",
+          "text": "A bit. I delayed my listing by maybe three days because I didn't want the first booking to go badly.",
+          "offsetSeconds": 92,
+          "timestamp": "2026-05-23T12:01:32.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-10",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Customer",
+          "text": "If something just told me what to fix next, I would probably pay if it saved me an hour a week.",
+          "offsetSeconds": 107,
+          "timestamp": "2026-05-23T12:01:47.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-11",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Interviewer",
+          "text": "What would that need to do in order to feel worth paying for?",
+          "offsetSeconds": 118,
+          "timestamp": "2026-05-23T12:01:58.000Z"
+        },
+        {
+          "id": "airbnb-host-onboarding-chunk-12",
+          "interviewId": "airbnb-host-onboarding",
+          "speaker": "Customer",
+          "text": "Show me the exact pricing risks, explain blocked calendar dates, and warn me before I publish something that looks unprofessional.",
+          "offsetSeconds": 131,
+          "timestamp": "2026-05-23T12:02:11.000Z"
+        }
+      ],
+      "insights": [
+        {
+          "id": "airbnb-host-onboarding-insight-1",
+          "interviewId": "airbnb-host-onboarding",
+          "createdAt": "2026-05-23T12:00:00.000Z",
+          "chunkId": "airbnb-host-onboarding-chunk-4",
+          "type": "pain_point",
+          "title": "Onboarding friction was hidden behind a vague satisfaction answer",
+          "summary": "The host initially described onboarding as fine, but later admitted they only figured it out eventually.",
+          "quote": "I mean I figured it out eventually.",
+          "tags": [
+            "onboarding",
+            "hidden-friction",
+            "new-host"
+          ],
+          "sentiment": -0.28,
+          "urgency": 71,
+          "confidence": 88
+        },
+        {
+          "id": "airbnb-host-onboarding-insight-2",
+          "interviewId": "airbnb-host-onboarding",
+          "createdAt": "2026-05-23T12:00:00.000Z",
+          "chunkId": "airbnb-host-onboarding-chunk-6",
+          "type": "pain_point",
+          "title": "Pricing controls created launch anxiety",
+          "summary": "Smart pricing made the host worry about undercharging on high-demand dates.",
+          "quote": "I didn't know if smart pricing would make me too cheap on weekends.",
+          "tags": [
+            "pricing",
+            "trust",
+            "configuration"
+          ],
+          "sentiment": -0.46,
+          "urgency": 82,
+          "confidence": 91
+        },
+        {
+          "id": "airbnb-host-onboarding-insight-3",
+          "interviewId": "airbnb-host-onboarding",
+          "createdAt": "2026-05-23T12:00:00.000Z",
+          "chunkId": "airbnb-host-onboarding-chunk-7",
+          "type": "workflow",
+          "title": "Support became part of the setup workflow",
+          "summary": "The host needed support twice before launch, indicating onboarding does not resolve key setup uncertainty.",
+          "quote": "I had to message support twice.",
+          "tags": [
+            "support-dependency",
+            "calendar",
+            "verification"
+          ],
+          "sentiment": -0.52,
+          "urgency": 77,
+          "confidence": 93
+        },
+        {
+          "id": "airbnb-host-onboarding-insight-4",
+          "interviewId": "airbnb-host-onboarding",
+          "createdAt": "2026-05-23T12:00:00.000Z",
+          "chunkId": "airbnb-host-onboarding-chunk-10",
+          "type": "buying_signal",
+          "title": "Clear willingness to pay for proactive setup guidance",
+          "summary": "The host would pay for a tool that saves roughly one hour per week and tells them what to fix next.",
+          "quote": "I would probably pay if it saved me an hour a week.",
+          "tags": [
+            "willingness-to-pay",
+            "automation",
+            "buying-signal"
+          ],
+          "sentiment": 0.38,
+          "urgency": 86,
+          "confidence": 90
+        }
+      ],
+      "report": {
+        "interviewId": "airbnb-host-onboarding",
+        "executiveSummary": "A first-time Airbnb host described onboarding as acceptable at first, but the transcript revealed unresolved setup ambiguity, pricing trust issues, and repeated support dependency. The strongest opportunity is a proactive launch readiness assistant that explains pricing risks, calendar blockers, and next best setup actions.",
+        "topInsights": [
+          "Vague positive satisfaction masked meaningful onboarding friction.",
+          "Pricing configuration uncertainty delayed launch confidence.",
+          "Support dependency appeared before the host reached first booking.",
+          "The host stated willingness to pay if guidance saves one hour per week.",
+          "Calendar and verification blockers are emotionally tied to fear of a bad first booking."
+        ],
+        "painPoints": [
+          "Pricing settings felt unclear",
+          "Calendar availability was confusing",
+          "Support was required twice",
+          "Launch confidence dropped enough to delay publishing"
+        ],
+        "featureRequests": [
+          "Next best setup action checklist",
+          "Pricing risk explainer",
+          "Calendar blocker diagnostics",
+          "Pre-publish professionalism warning"
+        ],
+        "userQuotes": [
+          "Yeah onboarding was fine I guess.",
+          "I mean I figured it out eventually.",
+          "I had to message support twice.",
+          "I would probably pay if it saved me an hour a week."
+        ],
+        "buyingSignals": [
+          "Explicit willingness to pay",
+          "Clear time-saving threshold",
+          "High pain around avoiding launch mistakes"
+        ],
+        "qualityScore": 86,
+        "qualityBreakdown": {
+          "questionNeutrality": 91,
+          "followUpDepth": 83,
+          "answerSpecificity": 79,
+          "evidenceQuality": 84,
+          "concreteExamples": 78,
+          "emotionalCueCapture": 82,
+          "userTalkTimeRatio": 88,
+          "insightDensity": 93
+        },
+        "didWell": [
+          "Followed up on vague language",
+          "Asked for concrete moments",
+          "Explored confidence impact"
+        ],
+        "missedFollowUps": [
+          "Ask what the support responses failed to make clear",
+          "Ask how the host evaluated smart pricing after launch"
+        ],
+        "leadingQuestions": [
+          "No major leading questions detected"
+        ],
+        "bestNextQuestions": [
+          "What was the exact moment you decided to delay publishing?",
+          "What would a trustworthy pricing recommendation need to show?",
+          "How would you measure whether this saved an hour per week?"
+        ],
+        "recommendedProductActions": [
+          "Prototype a launch readiness score for new hosts",
+          "Add pricing explanation cards for weekend and demand spikes",
+          "Surface calendar blockers with plain-language causes",
+          "Test paid proactive setup guidance with first-time hosts"
+        ],
+        "generatedAt": "2026-05-23T12:00:00.000Z"
+      }
+    },
+    {
+      "id": "b2b-saas-admin-dashboard",
+      "title": "B2B SaaS admin dashboard",
+      "customer": "Jordan, RevOps admin",
+      "segment": "Mid-market SaaS",
+      "goal": "Find dashboard workflow breakdowns for administrators.",
+      "status": "complete",
+      "createdAt": "2026-05-23T12:00:00.000Z",
+      "durationSeconds": 1080,
+      "qualityScore": 78,
+      "sentimentScore": -0.24,
+      "urgencyScore": 68,
+      "confidenceScore": 82,
+      "tags": [
+        "admin",
+        "reporting",
+        "permissions",
+        "workflow"
+      ],
+      "transcript": [
+        {
+          "id": "b2b-saas-admin-dashboard-chunk-1",
+          "interviewId": "b2b-saas-admin-dashboard",
+          "speaker": "Interviewer",
+          "text": "Walk me through the last time you used the admin dashboard.",
+          "offsetSeconds": 8,
+          "timestamp": "2026-05-23T12:00:08.000Z"
+        },
+        {
+          "id": "b2b-saas-admin-dashboard-chunk-2",
+          "interviewId": "b2b-saas-admin-dashboard",
+          "speaker": "Customer",
+          "text": "I mostly use it when someone asks why a report looks different from Salesforce.",
+          "offsetSeconds": 22,
+          "timestamp": "2026-05-23T12:00:22.000Z"
+        },
+        {
+          "id": "b2b-saas-admin-dashboard-chunk-3",
+          "interviewId": "b2b-saas-admin-dashboard",
+          "speaker": "Customer",
+          "text": "The annoying thing is I have to open three tabs to explain one number.",
+          "offsetSeconds": 44,
+          "timestamp": "2026-05-23T12:00:44.000Z"
+        },
+        {
+          "id": "b2b-saas-admin-dashboard-chunk-4",
+          "interviewId": "b2b-saas-admin-dashboard",
+          "speaker": "Customer",
+          "text": "Permissions are scary because I cannot preview what a manager will see.",
+          "offsetSeconds": 70,
+          "timestamp": "2026-05-23T12:01:10.000Z"
+        },
+        {
+          "id": "b2b-saas-admin-dashboard-chunk-5",
+          "interviewId": "b2b-saas-admin-dashboard",
+          "speaker": "Customer",
+          "text": "I would love a change log that explains who changed a field and what broke downstream.",
+          "offsetSeconds": 95,
+          "timestamp": "2026-05-23T12:01:35.000Z"
+        }
+      ],
+      "insights": [
+        {
+          "id": "b2b-saas-admin-dashboard-insight-1",
+          "interviewId": "b2b-saas-admin-dashboard",
+          "createdAt": "2026-05-23T12:00:00.000Z",
+          "chunkId": "b2b-saas-admin-dashboard-chunk-2",
+          "type": "pain_point",
+          "title": "Report reconciliation requires too many tabs",
+          "summary": "Report reconciliation requires too many tabs",
+          "quote": "I have to open three tabs to explain one number.",
+          "tags": [
+            "reporting",
+            "workflow"
+          ],
+          "sentiment": -0.4,
+          "urgency": 66,
+          "confidence": 86
+        },
+        {
+          "id": "b2b-saas-admin-dashboard-insight-2",
+          "interviewId": "b2b-saas-admin-dashboard",
+          "createdAt": "2026-05-23T12:00:00.000Z",
+          "chunkId": "b2b-saas-admin-dashboard-chunk-3",
+          "type": "pain_point",
+          "title": "Permissions lack preview confidence",
+          "summary": "Permissions lack preview confidence",
+          "quote": "I cannot preview what a manager will see.",
+          "tags": [
+            "permissions",
+            "trust"
+          ],
+          "sentiment": -0.52,
+          "urgency": 74,
+          "confidence": 88
+        },
+        {
+          "id": "b2b-saas-admin-dashboard-insight-3",
+          "interviewId": "b2b-saas-admin-dashboard",
+          "createdAt": "2026-05-23T12:00:00.000Z",
+          "chunkId": "b2b-saas-admin-dashboard-chunk-4",
+          "type": "feature_request",
+          "title": "Admin wants an impact-aware change log",
+          "summary": "Admin wants an impact-aware change log",
+          "quote": "Who changed a field and what broke downstream.",
+          "tags": [
+            "audit-log",
+            "admin"
+          ],
+          "sentiment": 0.12,
+          "urgency": 64,
+          "confidence": 81
+        }
+      ],
+      "report": {
+        "interviewId": "b2b-saas-admin-dashboard",
+        "executiveSummary": "B2B SaaS admin dashboard surfaced 3 product opportunities across admin, reporting, permissions.",
+        "topInsights": [
+          "Report reconciliation requires too many tabs",
+          "Permissions lack preview confidence",
+          "Admin wants an impact-aware change log"
+        ],
+        "painPoints": [
+          "Report reconciliation requires too many tabs",
+          "Permissions lack preview confidence"
+        ],
+        "featureRequests": [
+          "Admin wants an impact-aware change log"
+        ],
+        "userQuotes": [
+          "I have to open three tabs to explain one number.",
+          "I cannot preview what a manager will see.",
+          "Who changed a field and what broke downstream."
+        ],
+        "buyingSignals": [],
+        "qualityScore": 78,
+        "qualityBreakdown": {
+          "questionNeutrality": 82,
+          "followUpDepth": 73,
+          "answerSpecificity": 75,
+          "evidenceQuality": 78,
+          "concreteExamples": 72,
+          "emotionalCueCapture": 70,
+          "userTalkTimeRatio": 83,
+          "insightDensity": 80
+        },
+        "didWell": [
+          "Kept questions concise",
+          "Captured concrete workflow language"
+        ],
+        "missedFollowUps": [
+          "Probe for frequency and business impact",
+          "Ask for the most recent concrete example"
+        ],
+        "leadingQuestions": [
+          "No severe bias detected"
+        ],
+        "bestNextQuestions": [
+          "What happens immediately after that moment?",
+          "How often does this occur in a normal week?"
+        ],
+        "recommendedProductActions": [
+          "Explore: Report reconciliation requires too many tabs",
+          "Explore: Permissions lack preview confidence",
+          "Explore: Admin wants an impact-aware change log"
+        ],
+        "generatedAt": "2026-05-23T12:00:00.000Z"
+      }
+    },
+    {
+      "id": "consumer-fitness-app-churn",
+      "title": "Consumer fitness app churn",
+      "customer": "Ari, former subscriber",
+      "segment": "Consumer wellness",
+      "goal": "Understand why active users cancel after week three.",
+      "status": "complete",
+      "createdAt": "2026-05-23T12:00:00.000Z",
+      "durationSeconds": 1080,
+      "qualityScore": 74,
+      "sentimentScore": -0.31,
+      "urgencyScore": 63,
+      "confidenceScore": 79,
+      "tags": [
+        "churn",
+        "habits",
+        "notifications",
+        "personalization"
+      ],
+      "transcript": [
+        {
+          "id": "consumer-fitness-app-churn-chunk-1",
+          "interviewId": "consumer-fitness-app-churn",
+          "speaker": "Interviewer",
+          "text": "What changed before you cancelled?",
+          "offsetSeconds": 6,
+          "timestamp": "2026-05-23T12:00:06.000Z"
+        },
+        {
+          "id": "consumer-fitness-app-churn-chunk-2",
+          "interviewId": "consumer-fitness-app-churn",
+          "speaker": "Customer",
+          "text": "The workouts started feeling repetitive, like it forgot what equipment I had.",
+          "offsetSeconds": 19,
+          "timestamp": "2026-05-23T12:00:19.000Z"
+        },
+        {
+          "id": "consumer-fitness-app-churn-chunk-3",
+          "interviewId": "consumer-fitness-app-churn",
+          "speaker": "Customer",
+          "text": "Notifications were either too many or totally irrelevant.",
+          "offsetSeconds": 43,
+          "timestamp": "2026-05-23T12:00:43.000Z"
+        },
+        {
+          "id": "consumer-fitness-app-churn-chunk-4",
+          "interviewId": "consumer-fitness-app-churn",
+          "speaker": "Customer",
+          "text": "I liked the streaks, but missing one day made me feel like I had already failed.",
+          "offsetSeconds": 66,
+          "timestamp": "2026-05-23T12:01:06.000Z"
+        },
+        {
+          "id": "consumer-fitness-app-churn-chunk-5",
+          "interviewId": "consumer-fitness-app-churn",
+          "speaker": "Customer",
+          "text": "If it adapted when my schedule got chaotic, I might have stayed.",
+          "offsetSeconds": 88,
+          "timestamp": "2026-05-23T12:01:28.000Z"
+        }
+      ],
+      "insights": [
+        {
+          "id": "consumer-fitness-app-churn-insight-1",
+          "interviewId": "consumer-fitness-app-churn",
+          "createdAt": "2026-05-23T12:00:00.000Z",
+          "chunkId": "consumer-fitness-app-churn-chunk-2",
+          "type": "pain_point",
+          "title": "Personalization decay caused repetition",
+          "summary": "Personalization decay caused repetition",
+          "quote": "It forgot what equipment I had.",
+          "tags": [
+            "personalization",
+            "churn"
+          ],
+          "sentiment": -0.38,
+          "urgency": 65,
+          "confidence": 82
+        },
+        {
+          "id": "consumer-fitness-app-churn-insight-2",
+          "interviewId": "consumer-fitness-app-churn",
+          "createdAt": "2026-05-23T12:00:00.000Z",
+          "chunkId": "consumer-fitness-app-churn-chunk-3",
+          "type": "objection",
+          "title": "Notifications felt poorly calibrated",
+          "summary": "Notifications felt poorly calibrated",
+          "quote": "Too many or totally irrelevant.",
+          "tags": [
+            "notifications"
+          ],
+          "sentiment": -0.43,
+          "urgency": 55,
+          "confidence": 78
+        },
+        {
+          "id": "consumer-fitness-app-churn-insight-3",
+          "interviewId": "consumer-fitness-app-churn",
+          "createdAt": "2026-05-23T12:00:00.000Z",
+          "chunkId": "consumer-fitness-app-churn-chunk-4",
+          "type": "feature_request",
+          "title": "Recovery mode after missed habits",
+          "summary": "Recovery mode after missed habits",
+          "quote": "Missing one day made me feel like I had already failed.",
+          "tags": [
+            "habits",
+            "retention"
+          ],
+          "sentiment": -0.48,
+          "urgency": 72,
+          "confidence": 83
+        }
+      ],
+      "report": {
+        "interviewId": "consumer-fitness-app-churn",
+        "executiveSummary": "Consumer fitness app churn surfaced 3 product opportunities across churn, habits, notifications.",
+        "topInsights": [
+          "Personalization decay caused repetition",
+          "Notifications felt poorly calibrated",
+          "Recovery mode after missed habits"
+        ],
+        "painPoints": [
+          "Personalization decay caused repetition",
+          "Notifications felt poorly calibrated"
+        ],
+        "featureRequests": [
+          "Recovery mode after missed habits"
+        ],
+        "userQuotes": [
+          "It forgot what equipment I had.",
+          "Too many or totally irrelevant.",
+          "Missing one day made me feel like I had already failed."
+        ],
+        "buyingSignals": [],
+        "qualityScore": 74,
+        "qualityBreakdown": {
+          "questionNeutrality": 78,
+          "followUpDepth": 69,
+          "answerSpecificity": 71,
+          "evidenceQuality": 74,
+          "concreteExamples": 68,
+          "emotionalCueCapture": 66,
+          "userTalkTimeRatio": 79,
+          "insightDensity": 76
+        },
+        "didWell": [
+          "Kept questions concise",
+          "Captured concrete workflow language"
+        ],
+        "missedFollowUps": [
+          "Probe for frequency and business impact",
+          "Ask for the most recent concrete example"
+        ],
+        "leadingQuestions": [
+          "No severe bias detected"
+        ],
+        "bestNextQuestions": [
+          "What happens immediately after that moment?",
+          "How often does this occur in a normal week?"
+        ],
+        "recommendedProductActions": [
+          "Explore: Personalization decay caused repetition",
+          "Explore: Notifications felt poorly calibrated",
+          "Explore: Recovery mode after missed habits"
+        ],
+        "generatedAt": "2026-05-23T12:00:00.000Z"
+      }
+    }
+  ]
+}
