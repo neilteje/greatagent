@@ -4,21 +4,21 @@
 
 :root {
   color-scheme: dark;
-  --background: 222 28% 5%;
-  --foreground: 210 30% 94%;
-  --card: 222 28% 8%;
-  --card-foreground: 210 30% 94%;
-  --muted: 220 18% 13%;
-  --muted-foreground: 218 12% 66%;
-  --accent: 175 34% 18%;
-  --accent-foreground: 176 48% 88%;
-  --primary: 173 72% 46%;
-  --primary-foreground: 190 70% 7%;
+  --background: 210 24% 7%;
+  --foreground: 210 30% 95%;
+  --card: 210 22% 10%;
+  --card-foreground: 210 30% 95%;
+  --muted: 210 16% 16%;
+  --muted-foreground: 214 12% 67%;
+  --accent: 172 24% 18%;
+  --accent-foreground: 174 46% 86%;
+  --primary: 172 55% 58%;
+  --primary-foreground: 194 56% 8%;
   --destructive: 0 76% 56%;
   --destructive-foreground: 0 0% 100%;
-  --border: 220 17% 18%;
-  --input: 220 17% 18%;
-  --ring: 173 72% 46%;
+  --border: 211 19% 20%;
+  --input: 211 19% 20%;
+  --ring: 172 55% 58%;
 }
 
 * {
@@ -28,7 +28,7 @@
 html,
 body {
   min-height: 100%;
-  background: hsl(var(--background));
+  background: #081117;
 }
 
 body {
@@ -41,10 +41,7 @@ body::before {
   inset: 0;
   z-index: -2;
   content: "";
-  background:
-    radial-gradient(circle at 22% 8%, rgba(20, 184, 166, 0.16), transparent 30%),
-    radial-gradient(circle at 82% 0%, rgba(99, 102, 241, 0.14), transparent 32%),
-    linear-gradient(180deg, #061013 0%, #080b11 48%, #05070b 100%);
+  background: #081117;
 }
 
 body::after {
@@ -53,23 +50,23 @@ body::after {
   z-index: -1;
   pointer-events: none;
   content: "";
-  background-image:
-    linear-gradient(rgba(255,255,255,0.027) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.027) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.025), inset 0 80px 140px rgba(255,255,255,0.025);
 }
 
 .glass {
-  background: rgba(12, 18, 25, 0.74);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(18px);
+  background: rgba(15, 24, 31, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.22),
+    0 18px 38px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(16px);
 }
 
 .soft-panel {
-  background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
+  background: rgba(255,255,255,0.055);
   border: 1px solid rgba(255,255,255,0.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .status-dot {

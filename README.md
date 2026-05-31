@@ -2,9 +2,7 @@
 
 `great agent` is an end-to-end demo of an AI-native customer research platform. It feels like a realtime research command center: a moderator agent listens to an interview, flags weak research moments, suggests better follow-ups, extracts insights, scores interview quality, and makes past evidence searchable by meaning.
 
-## Why It Matters
-
-Customer interviews are only as useful as the evidence they produce. Teams often miss vague answers, accept weak satisfaction signals, forget to probe emotional cues, or lose the best quotes after the call. This demo shows how an AI research copilot can improve interview quality while the conversation is happening, then turn the transcript into a reusable research memory.
+I strongly believe customer interviews are only as useful as the evidence they produce. Teams often miss vague answers, accept weak satisfaction signals, forget to probe emotional cues, or lose the best quotes after the call. And today, I built something that shows how an AI research copilot can improve interview quality while the conversation is happening, then turn the transcript into a reusable research memory.
 
 ## What Is Included
 
@@ -13,7 +11,7 @@ Customer interviews are only as useful as the evidence they produce. Teams often
 - Demo mode via **Run Airbnb Host Demo**
 - Real audio transcription route using Whisper when `OPENAI_API_KEY` is configured
 - Analyzer route for realtime research critique and insight extraction
-- Post-interview report with executive summary, quality critic score, radar chart, insights, quotes, missed follow-ups, and product actions
+- Post-interview report with executive summary, an LLM council deliberation, quality critic score, radar chart, insights, quotes, missed follow-ups, and product actions
 - Semantic memory search with local cosine similarity and OpenAI embeddings when available
 - Local JSON persistence under `data/interviews.json`
 
@@ -26,15 +24,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
-
-## Environment
-
-```bash
-OPENAI_API_KEY=
-NEXT_PUBLIC_APP_NAME=Research Autopilot
-```
-
-The app works without an API key by using deterministic demo fallbacks for analysis, reports, embeddings, and transcription. Add `OPENAI_API_KEY` to enable OpenAI reasoning, embeddings, and Whisper transcription.
 
 ## Demo Mode
 
@@ -59,23 +48,6 @@ The app works without an API key by using deterministic demo fallbacks for analy
 - `components/` contains reusable command-center UI components.
 - `lib/types.ts` defines `Interview`, `TranscriptChunk`, `AgentAlert`, `SuggestedFollowUp`, `ExtractedInsight`, `InterviewReport`, and `MemorySearchResult`.
 - `lib/data.ts` reads and writes local JSON persistence.
-- `lib/ai.ts` wraps OpenAI calls and robust fallback parsing.
+- `lib/ai.ts` wraps OpenAI calls, robust fallback parsing, and the multi-agent LLM council that deliberates over generated reports.
 - `lib/vector.ts` implements cosine similarity plus a local hash embedding fallback.
 - `lib/demo-data.ts` seeds three research interviews: Airbnb host onboarding, B2B SaaS admin dashboard, and consumer fitness app churn.
-
-## 3-Minute Walkthrough Script
-
-1. **Dashboard:** Show the product promise, seeded interviews, average quality score, and top pain points.
-2. **Live Interview:** Click **Run Airbnb Host Demo**. Explain that the transcript streams as if a real interview is happening.
-3. **Moderator Agent:** Point out the vague answer alert for “fine I guess,” then pricing confusion, support dependency, and willingness-to-pay signals.
-4. **Live Insights:** Show urgency, confidence, sentiment timeline, extracted pain points, and quote evidence.
-5. **Review Report:** Let the demo auto-navigate to the report. Highlight the quality critic radar chart and missed follow-ups.
-6. **Memory Search:** Search for “pricing frustration,” “support dependency,” or “willingness to pay” and show evidence cards from multiple interviews.
-
-## Useful Commands
-
-```bash
-npm run typecheck
-npm run build
-npm run dev
-```

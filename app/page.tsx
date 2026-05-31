@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
-import { ArrowRight, Bot, LineChart, MessageSquareText, Radio, Search, Target } from "lucide-react";
+import { ArrowRight, Bot, Gavel, LineChart, MessageSquareText, Radio, Search, Target } from "lucide-react";
 import { MetricCard } from "@/components/MetricCard";
 import { SeedDataButton } from "@/components/SeedDataButton";
 import { Badge } from "@/components/ui/badge";
@@ -21,14 +21,14 @@ export default async function DashboardPage() {
     .slice(0, 4);
   const features: Array<[string, string, LucideIcon]> = [
     ["Realtime moderator", "Flags vague answers, missed follow-ups, contradictions, emotional cues, and leading questions.", MessageSquareText],
+    ["LLM council", "Multiple specialist agents debate evidence, methodology, product risk, market value, and the strongest counterargument.", Gavel],
     ["Research quality critic", "Scores neutrality, follow-up depth, specificity, evidence quality, talk-time, and insight density.", Target],
     ["Semantic memory", "Search interview evidence by meaning, not filenames or exact keywords.", Search]
   ];
 
   return (
     <div className="space-y-5">
-      <section className="relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] p-6 shadow-glow lg:p-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(45,212,191,0.16),transparent_36%)]" />
+      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/55 p-6 shadow-glow lg:p-8">
         <div className="relative flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <Badge>AI-native research platform</Badge>
@@ -36,7 +36,7 @@ export default async function DashboardPage() {
               great agent turns live interviews into evidence, critique, and searchable memory.
             </h1>
             <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">
-              A realtime moderator agent detects weak research moments, recommends better follow-ups, scores interview quality, and stores semantic insights.
+              A realtime moderator agent detects weak research moments, then an LLM council debates evidence, product risk, market value, and the best next action.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -109,7 +109,7 @@ export default async function DashboardPage() {
         </Card>
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="grid gap-4 lg:grid-cols-4">
         {features.map(([title, copy, Icon]) => (
           <Card key={title}>
             <CardContent className="p-5">

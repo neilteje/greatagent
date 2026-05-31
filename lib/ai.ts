@@ -1,10 +1,43 @@
-import type { AnalyzerResponse, Interview, InterviewReport, TranscriptChunk } from "@/lib/types";
+import type { AnalyzerResponse, CouncilDeliberation, CouncilJustice, Interview, InterviewReport, TranscriptChunk } from "@/lib/types";
 import { fallbackAnalysis } from "@/lib/demo-data";
 import { getOpenAI } from "@/lib/openai";
 import { localHashEmbedding } from "@/lib/vector";
 
 const analyzerPrompt =
   "You are an expert user research moderator. Your job is to help the interviewer run a better customer interview in real time. Detect vague answers, missed follow-ups, contradictions, emotional cues, buying signals, feature requests, pain points, and leading questions. Return concise, actionable JSON only.";
+
+const councilJustices = [
+  {
+    id: "evidence",
+    name: "Justice Evidence",
+    role: "Transcript evidence and quote reliability",
+    stance: "Separate proved customer evidence from attractive but unsupported interpretation."
+  },
+  {
+    id: "methodology",
+    name: "Justice Methodology",
+    role: "Research quality and interview rigor",
+    stance: "Identify bias, weak follow-ups, and missing specificity before accepting conclusions."
+  },
+  {
+    id: "product",
+    name: "Justice Product",
+    role: "Product strategy and prioritization",
+    stance: "Translate validated pain into concrete product bets with clear risk."
+  },
+  {
+    id: "market",
+    name: "Justice Market",
+    role: "Buying signals and commercial value",
+    stance: "Pressure-test urgency, willingness to pay, and segment-level importance."
+  },
+  {
+    id: "skeptic",
+    name: "Justice Skeptic",
+    role: "Adversarial counterargument",
+    stance: "Find the strongest reason the team should not overreact to this interview."
+  }
+] as const;
 
 export function safeJson<T>(value: string, fallback: T): T {
   try {
@@ -132,15 +165,126 @@ export async function generateReport(interview: Interview): Promise<InterviewRep
       ]
     });
     const parsed = safeJson<InterviewReport>(completion.choices[0]?.message.content ?? "", fallback);
-    return {
+    const report = {
       ...fallback,
       ...parsed,
       interviewId: interview.id,
       generatedAt: new Date().toISOString()
     };
+    const council = await deliberateWithCouncil(interview, report);
+    return { ...report, council };
   } catch {
     return fallback;
   }
+}
+
+async function deliberateWithCouncil(interview: Interview, report: InterviewReport): Promise<CouncilDeliberation> {
+  const fallback = makeFallbackCouncil(interview, report);
+  const openai = getOpenAI();
+  if (!openai) return fallback;
+
+  try {
+    const justiceOpinions = await Promise.all(
+      councilJustices.map(async (justice) => {
+        const completion = await openai.chat.completions.create({
+          model: "gpt-4o-mini",
+          response_format: { type: "json_object" },
+          temperature: 0.35,
+          messages: [
+            {
+              role: "system",
+              content: `You are ${justice.name}, an LLM council justice for an in-house research supreme court. Your specialty: ${justice.role}. Your stance: ${justice.stance}. Reason independently, cite only transcript/report evidence, and return concise JSON only.`
+            },
+            {
+              role: "user",
+              content: JSON.stringify({
+                schema: {
+                  id: justice.id,
+                  name: justice.name,
+                  role: justice.role,
+                  position: "one sentence ruling from this justice",
+                  keyEvidence: ["2-4 short evidence bullets"],
+                  recommendation: "one concrete recommendation",
+                  confidence: "0-100"
+                },
+                interview,
+                draftReport: report
+              })
+            }
+          ]
+        });
+
+        const fallbackJustice = fallback.justices.find((item) => item.id === justice.id) ?? fallback.justices[0];
+        return normalizeJustice(
+          safeJson<CouncilJustice>(completion.choices[0]?.message.content ?? "", fallbackJustice),
+          fallbackJustice
+        );
+      })
+    );
+
+    const synthesis = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      response_format: { type: "json_object" },
+      temperature: 0.2,
+      messages: [
+        {
+          role: "system",
+          content: "You are Chief Justice Synthesis, the final LLM council arbiter. Weigh the justice opinions, resolve disagreements, and return concise JSON only."
+        },
+        {
+          role: "user",
+          content: JSON.stringify({
+            schema: {
+              caseTitle: "string",
+              docketSummary: "one short paragraph",
+              majorityOpinion: "one short paragraph",
+              dissentingConcern: "one short paragraph",
+              finalVerdict: "one decisive sentence",
+              confidence: "0-100",
+              nextAction: "one concrete next step"
+            },
+            interview,
+            draftReport: report,
+            justiceOpinions
+          })
+        }
+      ]
+    });
+
+    const parsed = safeJson<Omit<CouncilDeliberation, "justices">>(
+      synthesis.choices[0]?.message.content ?? "",
+      fallback
+    );
+
+    return normalizeCouncil({ ...fallback, ...parsed, justices: justiceOpinions }, fallback);
+  } catch {
+    return fallback;
+  }
+}
+
+function normalizeJustice(parsed: CouncilJustice, fallback: CouncilJustice): CouncilJustice {
+  return {
+    id: parsed.id || fallback.id,
+    name: parsed.name || fallback.name,
+    role: parsed.role || fallback.role,
+    position: parsed.position || fallback.position,
+    keyEvidence: Array.isArray(parsed.keyEvidence) ? parsed.keyEvidence.slice(0, 4) : fallback.keyEvidence,
+    recommendation: parsed.recommendation || fallback.recommendation,
+    confidence: clampNumber(parsed.confidence, 0, 100, fallback.confidence)
+  };
+}
+
+function normalizeCouncil(parsed: CouncilDeliberation, fallback: CouncilDeliberation): CouncilDeliberation {
+  return {
+    caseTitle: parsed.caseTitle || fallback.caseTitle,
+    docketSummary: parsed.docketSummary || fallback.docketSummary,
+    justices: Array.isArray(parsed.justices) && parsed.justices.length ? parsed.justices.map((item, index) => normalizeJustice(item, fallback.justices[index] ?? fallback.justices[0])) : fallback.justices,
+    majorityOpinion: parsed.majorityOpinion || fallback.majorityOpinion,
+    dissentingConcern: parsed.dissentingConcern || fallback.dissentingConcern,
+    finalVerdict: parsed.finalVerdict || fallback.finalVerdict,
+    confidence: clampNumber(parsed.confidence, 0, 100, fallback.confidence),
+    nextAction: parsed.nextAction || fallback.nextAction
+  };
 }
 
 export function makeFallbackReport(interview: Interview): InterviewReport {
@@ -172,7 +316,49 @@ export function makeFallbackReport(interview: Interview): InterviewReport {
     leadingQuestions: ["No severe leading question pattern detected"],
     bestNextQuestions: ["What happened the last time this came up?", "How did you work around it?", "What would make this worth paying for?"],
     recommendedProductActions: interview.insights.slice(0, 4).map((item) => `Prototype around: ${item.title}`),
+    council: makeFallbackCouncil(interview),
     generatedAt: new Date().toISOString()
+  };
+}
+
+export function makeFallbackCouncil(interview: Interview, report?: InterviewReport): CouncilDeliberation {
+  const topEvidence = interview.insights.slice(0, 3).map((item) => item.quote || item.title).filter(Boolean);
+  const coreEvidence = topEvidence.length ? topEvidence : ["The transcript has limited evidence, so the ruling stays cautious."];
+  const topInsight = report?.topInsights?.[0] ?? interview.insights[0]?.title ?? "The strongest opportunity needs more evidence.";
+  const topAction = report?.recommendedProductActions?.[0] ?? `Run a deeper follow-up around ${topInsight.toLowerCase()}.`;
+  const confidence = Math.round(
+    Math.max(55, Math.min(92, (interview.confidenceScore ?? 72) + Math.min(10, interview.insights.length * 2)))
+  );
+
+  return {
+    caseTitle: `${interview.title} v. Unvalidated Assumptions`,
+    docketSummary: `The council reviewed ${interview.transcript.length} transcript turns, ${interview.insights.length} extracted insights, and the stated goal: ${interview.goal}`,
+    justices: councilJustices.map((justice, index) => ({
+      id: justice.id,
+      name: justice.name,
+      role: justice.role,
+      position: [
+        `The evidence supports acting on ${topInsight.toLowerCase()}, but only within this segment.`,
+        "The interview produced useful signals, yet more concrete frequency and cost data would improve rigor.",
+        `The product team should prioritize a focused experiment before broad roadmap commitment.`,
+        "Commercial urgency is promising when the transcript includes explicit time, money, or risk language.",
+        "The strongest counterargument is that one interview cannot prove segment-wide demand."
+      ][index],
+      keyEvidence: coreEvidence,
+      recommendation: [
+        topAction,
+        "Ask the next participant for the most recent example, frequency, and workaround cost.",
+        "Prototype the smallest version of the recommended action and test comprehension.",
+        "Validate willingness to pay with a concrete package, price, and success metric.",
+        "Log assumptions that remain unproven before committing engineering time."
+      ][index],
+      confidence: Math.max(50, Math.min(94, confidence - index * 3))
+    })),
+    majorityOpinion: `A majority of the council agrees that ${topInsight.toLowerCase()} is actionable enough for a narrow product experiment, not a broad roadmap bet.`,
+    dissentingConcern: "The dissent warns that the sample is too small to infer prevalence without another round of targeted interviews.",
+    finalVerdict: `Proceed with a focused validation sprint around ${topInsight.toLowerCase()}.`,
+    confidence,
+    nextAction: topAction
   };
 }
 

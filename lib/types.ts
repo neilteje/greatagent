@@ -78,6 +78,27 @@ export type QualityScoreBreakdown = {
   insightDensity: number;
 };
 
+export type CouncilJustice = {
+  id: string;
+  name: string;
+  role: string;
+  position: string;
+  keyEvidence: string[];
+  recommendation: string;
+  confidence: number;
+};
+
+export type CouncilDeliberation = {
+  caseTitle: string;
+  docketSummary: string;
+  justices: CouncilJustice[];
+  majorityOpinion: string;
+  dissentingConcern: string;
+  finalVerdict: string;
+  confidence: number;
+  nextAction: string;
+};
+
 export type InterviewReport = {
   interviewId: string;
   executiveSummary: string;
@@ -93,6 +114,7 @@ export type InterviewReport = {
   leadingQuestions: string[];
   bestNextQuestions: string[];
   recommendedProductActions: string[];
+  council?: CouncilDeliberation;
   generatedAt: string;
 };
 
