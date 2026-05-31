@@ -1,11 +1,8 @@
-# great agent
-
 `great agent` is an end-to-end demo of an AI-native customer research platform. It feels like a realtime research command center: a moderator agent listens to an interview, flags weak research moments, suggests better follow-ups, extracts insights, scores interview quality, and makes past evidence searchable by meaning.
 
 I strongly believe customer interviews are only as useful as the evidence they produce. Teams often miss vague answers, accept weak satisfaction signals, forget to probe emotional cues, or lose the best quotes after the call. And today, I built something that shows how an AI research copilot can improve interview quality while the conversation is happening, then turn the transcript into a reusable research memory.
 
-## What Is Included
-
+## Greatest Agent offerings!!
 - Dashboard with recent interviews, insight stats, top pain points, and seeded demo data
 - Live interview console with optional webcam preview, MediaRecorder audio capture, timer, transcript stream, moderator alerts, follow-up recommendations, sentiment, urgency, and confidence
 - Demo mode via **Run Airbnb Host Demo**
